@@ -1,32 +1,26 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - finds and prints sum of even valued term
  *
- * purpose - fibonacci
- *
- * Return: (0) always
+ * Return: 0
  */
-	int main(void)
+
+int main(void)
+{
+	unsigned long f1 = 0, f2 = 1, fsum;
+	float totalSum;
+
+	while (1)
 	{
-		unsigned long int lim = 4000000;
-		unsigned long int bef = 0;
-		unsigned long int aft = 1;
-		unsigned long int R = 0;
-		unsigned long int sum = 0;
-
-		while (lim > R)
-		{
-			R = bef + aft;
-
-			if ((R % 2) == 0)
-			{
-				sum += R;
-			}
-
-			bef = aft;
-			aft = R;
-		}
-		printf("%li\n", sum);
-		return (0);
+		fsum = f1 + f2;
+		if (fsum > 4000000)
+			break;
+		if ((fsum % 2) == 0)
+			totalSum += fsum;
+		f1 = f2;
+		f2 = fsum;
+	}
+	printf("%.0f\n", totalSum);
+	return (0);
 }

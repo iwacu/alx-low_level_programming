@@ -1,23 +1,24 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _isalpha - check the code for Holberton School students.
+ * _isalpha - alphabet case checker. Returns 1 if true and 0 if false
  *
- * @c: is c an integer argument
+ * @c: integer parameter
  *
- * Return: Always 0.
+ * Return: Returns value
  */
 
 int _isalpha(int c)
 {
+	int value;
 
-	if (c >= 97 && c <= 122)
+	if ((c >= 'A' || c >= 'a') && (c <= 'Z' || c <= 'z'))
 	{
-		return (1);
+		value = 1;
 	}
-	else if (c >= 65 && c <= 90)
+	else
 	{
-		return (1);
+		value = 0;
 	}
-	return (0);
+	return (value);
 }
